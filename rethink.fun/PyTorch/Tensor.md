@@ -45,10 +45,10 @@ reshape & permute(转置)， reshape 是按元素顺序重新组织维度，perm
 squeeze & unsqueeze
 
 ##### torch.squeeze(A，N)
-torch.unsqueeze()函数的作用减少数组A指定位置N的维度，如果不指定位置参数N，如果数组A的维度为（1，1，3）那么执行 torch.squeeze(A，1) 后A的维度变为 （1，3），中间的维度被删除
+torch.unsqueeze()函数的作用减少数组 A 指定位置 N 的维度，如果不指定位置参数 N，如果数组 A 的维度为（1，1，3）那么执行 torch.squeeze(A，1) 后 A 的维度变为 （1，3），中间的维度被删除。
 注：
-1. 如果指定的维度大于1，那么将操作无效
-2. 如果不指定维度N，那么将删除所有维度为1的维度
+1. 如果指定的维度大于 1，那么将操作无效
+2. 如果不指定维度 N，那么将删除所有维度为 1 的维度
 
 ```python
 a=torch.randn(1,1,3)
@@ -71,7 +71,7 @@ torch.Size([1, 1, 3])
 ```
 
 ##### torch.unsqueeze(A，N)
-torch.unsqueeze()函数的作用增加数组A指定位置N的维度，例如两行三列的数组A维度为(2，3)，那么这个数组就有三个位置可以增加维度，分别是（ [位置0] 2，[位置1] 3 [位置2] ）或者是 （ [位置-3] 2，[位置-2] 3 [位置-1] ），如果执行 torch.unsqueeze(A，1)，数据的维度就变为了 （2，1，3）
+torch.unsqueeze()函数的作用增加数组 A 指定位置 N 的维度，例如两行三列的数组 A 维度为(2，3)，那么这个数组就有三个位置可以增加维度，分别是（ [位置 0] 2，[位置 1] 3， [位置 2] ）或者是 （ [位置-3] 2，[位置-2] 3， [位置-1] ），如果执行 torch.unsqueeze(A，1)，数据的维度就变为了 （2，1，3）
 
 ```python
 a=torch.randn(1,3)
@@ -93,4 +93,4 @@ torch.Size([1, 3, 1])
 #### 数学运算
 
 #### 统计函数
-通过tensor.sum()求和，通过tensor.mean()求均值，通过tensor.std()求标准差，通过tensor.min()求最小值等。
+通过 tensor.sum()求和，通过 tensor.mean()求均值，通过 tensor.std()求标准差，通过 tensor.min()求最小值等。
