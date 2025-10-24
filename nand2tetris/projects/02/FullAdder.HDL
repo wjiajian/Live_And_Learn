@@ -1,0 +1,22 @@
+/**
+HalfAdder
+adds three bits and produces a sum and carry bit.
+Inputs: a, b, c
+Outputs: sum, carry
+Sum = a XOR b XOR c
+Carry = (a AND b) OR (b AND c) OR (a AND c)
+*/
+
+CHIP FullAdder{
+    IN a, b, c;
+    OUT sum, carry;
+
+    PARTS:
+    Xor(a=a, b=b, out=abXor);
+    Xor(a=abXor, b=c, out=sum);
+    And(a=a, b=b, out=abAnd);
+    And(a=b, b=c, out=bcAnd);
+    And(a=a, b=c, out=acAnd);
+    Or(a=abAnd, b=bcAnd, out=tempCarry);
+    Or(a=tempCarry, b=acAnd, out=carry);
+}
